@@ -1,0 +1,151 @@
+.DAD {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+    position: relative; /* Ensure relative positioning */
+}
+
+
+.drag-and-drop {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 500px;
+    width: 500px;
+    
+}
+
+.flex{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+ 
+.circle{
+    background-image: linear-gradient(120deg, #ffffff 0%, #ffffff 100%);
+}
+
+.circle1{
+    background-image:  linear-gradient(120deg, #ffffff 0%, #ffffff 100%);;
+}
+
+.drop-zone, .empty-zone {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 2px dashed #6c6ff7;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 2;
+    padding: 2rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    }
+  
+  .drop-zone h1, .empty-zone h1 {
+   color: #4f51f3;
+   font-size: 1rem;
+   font-weight: 600;
+   height: 3rem;
+  }
+
+  .file-input-container {
+    
+    align-content: center;
+    height: 3rem;
+    
+  }
+  
+  .choose-files-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .choose-files-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .file-input-container input[type="file"] {
+    display: none;
+  }
+  
+  .image-preview {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+  }
+  
+  .preview-image {
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 10px;
+   
+  }
+  
+
+  @media (max-width:600px) {
+
+    .DAD{
+        overflow-y:auto;
+    }
+    .drag-and-drop{
+       
+       height: 50%;
+       margin: -10% 0 -10% 0;
+      
+       
+    }
+
+    .drop-zone, .empty-zone{
+       
+        width: fit-content;
+        width: 90%;
+        margin:0 20px 0 20px ;
+    }
+
+    .drop-zone {
+     height: 55%;
+    }
+    .empty-zone{
+        height: 30% !important;
+    }
+
+   
+
+    .image-preview {
+        margin: 2px;
+    }
+    .preview-image{
+        max-width: 150px;
+        max-height: 150px;
+        
+
+    }
+
+    .file-input-container {
+        transform: scale(0.7);
+    }
+
+    .flex{
+        flex-direction: column;
+        justify-content: start;
+    }
+    
+  }
