@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './DragAndDrop.css'; // Import CSS file for styles
+import '../../DragAndDrop.css'; // Import CSS file for styles
 
 const DragAndDrop = () => {
   const [images, setImages] = useState([]);
