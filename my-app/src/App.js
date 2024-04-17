@@ -1,12 +1,49 @@
-import logo from './logo.svg';
+
 import './App.css';
-import DragAndDrop from './DragDrop/DragAndDrop';
+import DragAndDrop  from './Componets/DragDrop/DragAndDrop';
+import {useEffect, useState } from 'react';
+import Loading from './Componets/Loader/Loading';
+import About from './Componets/About/About'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 
 function App() {
+  const [uploadedImagesHistory, setUploadedImagesHistory] = useState([]);
+
+  //Loader
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(()=>{
+    const fetchFakeData = ()=>{
+      setTimeout(()=>{
+        setIsLoading(false)
+      },4000)
+    }
+    fetchFakeData();
+  },[])
+
+
+  
+
+
   return (
-   
-     <DragAndDrop/>
-   
+    <Router>
+      <div className="App">
+        {isLoading ? <Loading /> : (
+          <Switch>
+            <Route exact path="/">
+              <DragAndDrop
+                uploadedImagesHistory={uploadedImagesHistory}
+                setUploadedImagesHistory={setUploadedImagesHistory}
+              />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+          </Switch>
+        )}
+      </div>
+    </Router>
   );
 }
 
