@@ -12,6 +12,13 @@
         
     }
 
+    .nav1{
+        display: block;
+    }
+
+    .nav2{
+        display: none;
+     }
    
 
 }
@@ -25,7 +32,12 @@
         width: 30vw !important;
     }
 
-
+    .nav1{
+        display: block;
+    }
+     .nav2{
+        display: none;
+     }
    
 }
 
@@ -34,4 +46,13 @@
     .cross{
         display: none;
     }
+
+    .nav1{
+        display: none;
+    }
+
+    .nav2{
+        display: flex;
+    }
+
 }

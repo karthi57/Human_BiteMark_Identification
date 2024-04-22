@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../DragDrop/DragAndDrop.css"; // Import CSS file for styles
 import Navbar from "../Navbar/Navbar";
+import Navbar2 from "../Navbar/Navbar2"
 
 const DragAndDrop = ({ uploadedImagesHistory, setUploadedImagesHistory }) => {
   const [images, setImages] = useState([]);
@@ -48,7 +49,13 @@ const DragAndDrop = ({ uploadedImagesHistory, setUploadedImagesHistory }) => {
 
   return (
     <div className="flex w-full h-screen Container">
-      <Navbar uploadedImagesHistory={uploadedImagesHistory} />
+      <span className="nav1 hidden">
+        <Navbar  uploadedImagesHistory={uploadedImagesHistory} />
+      </span>
+
+      <span className="nav2 w-[20%] ">
+        <Navbar2 uploadedImagesHistory={uploadedImagesHistory} />
+      </span>
 
       <div className="DAD ">
         {/* WHITE BLURS */}
@@ -170,7 +177,7 @@ const DragAndDrop = ({ uploadedImagesHistory, setUploadedImagesHistory }) => {
           </div>
 
           <div className="empty-zone">
-            <h1>Name of the Patient</h1>
+            <h1>Name of the Person</h1>
             <div className="patientDetails">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </div>

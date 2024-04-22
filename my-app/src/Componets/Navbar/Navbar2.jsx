@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import "./Navbar.css";
 
 function Navbar({uploadedImagesHistory}) {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   const toggleSidebar = ()=>{
     setSidebarOpen(!sidebarOpen);
@@ -31,7 +31,7 @@ function Navbar({uploadedImagesHistory}) {
     <>
        <img className={`menu w-6 h-6 mx-3 my-2 rounded-xl ${sidebarOpen ? 'hidden' : ''}`} src={menu} onClick={toggleSidebar}  alt="" />
       
-      <aside className={`h-screen w-[20%]  ${sidebarOpen ? 'block' : 'hidden'}`}>
+      <aside className={`h-screen ${sidebarOpen ? 'block' : 'hidden'}`}>
         
         <div className=" h-full w-full flex flex-col bg-white  shadow-sm " style={{background:"#f3f6f8"}}>
        
@@ -49,7 +49,8 @@ function Navbar({uploadedImagesHistory}) {
                     <li key={index} className="border-b mx-2 my-2  text-sm cursor-pointer">{index+1}. {imageName}</li>
                   ))}
                 </div>
-                <div className="border-t-2 p-4 text-center font-medium"> Made with 💓 by  <NavLink to="/about" className="text-green-400 underline" activeClassName="active"> SDK_</NavLink>
+                <div className="border-t-2 p-4 text-center font-medium"> Made with 💓 by 
+                <NavLink to="/about" className="text-green-400 underline" activeClassName="active"> SDK_</NavLink>
                  </div>
           </ul>
           
