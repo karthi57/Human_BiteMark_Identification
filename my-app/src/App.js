@@ -4,6 +4,7 @@ import DragAndDrop  from './Componets/DragDrop/DragAndDrop';
 import {useEffect, useState } from 'react';
 import Loading from './Componets/Loader/Loading';
 import About from './Componets/About/About'
+import Articles from "./Componets/Articles/Article"
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
@@ -39,6 +40,9 @@ function App() {
             </Route>
             <Route path="/about">
               <About />
+            </Route>
+            <Route path="/articles">
+              <Articles />
             </Route>
           </Switch>
         )}

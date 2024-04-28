@@ -44,10 +44,15 @@ function Navbar({uploadedImagesHistory}) {
                       </div>
                       <img className={`cross w-6 h-6 mx-2 rounded-xl ${!sidebarOpen ? 'hidden' : ''}`} src={cross} onClick={toggleSidebar}   alt="" />   
                 </div>
-                <div className="history border-t-2 w-[100%] h-[85vh] " >
+                <div className="history border-t-2 w-[100%] h-[85vh] border-b-2" >
                 {lastTenImages.map((imageName, index) => (
                     <li key={index} className="border-b mx-2 my-2  text-sm cursor-pointer">{index+1}. {imageName}</li>
                   ))}
+                </div>
+                <div>
+                  <h1 className=" p-2 text-center font-medium"> 
+                  <NavLink to="/articles" className="text-blue-400 underline" activeClassName="active"> Articles </NavLink>
+                   </h1>
                 </div>
                 <div className="border-t-2 p-4 text-center font-medium"> Made with 💓 by 
                 <NavLink to="/about" className="text-green-400 underline" activeClassName="active"> SDK_</NavLink>
